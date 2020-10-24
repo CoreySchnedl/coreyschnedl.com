@@ -29,8 +29,7 @@
             ],
             "styles": [
               "src/styles.scss",
-              "src/corey-theme.scss",
-              "node_modules/material-design-icons/iconfont/material-icons.css"
+              "src/corey-theme.scss"
             ],
             "scripts": []
           },
@@ -95,8 +94,7 @@
             ],
             "styles": [
               "src/styles.scss",
-              "src/corey-theme.scss",
-              "node_modules/material-design-icons/iconfont/material-icons.css"
+              "src/corey-theme.scss"
             ],
             "scripts": []
           }
