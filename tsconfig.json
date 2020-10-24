@@ -12,6 +12,6 @@
     "importHelpers": true,
     "target": "ES2015",
     "module": "ES2020",
-    "lib": ["ES2018", "DOM"],
+    "lib": ["ES2018", "DOM"]
   }
 }
