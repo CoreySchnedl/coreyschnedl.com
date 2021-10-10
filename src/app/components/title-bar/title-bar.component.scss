@@ -5,3 +5,9 @@ $primary: map-get($theme-light, primary);
 .coffee-button {
     background: map-get($primary, 200);
 }
+
+@media screen and (max-width: 800px) {
+    .hidden-small {
+        display: none !important;
+    }
+}
