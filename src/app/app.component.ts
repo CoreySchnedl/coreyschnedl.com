@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ColorSchemeService } from './services/ColorSchemeService.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'corey-schnedl-website';
+
+  constructor(private colorSchemeService: ColorSchemeService) {
+    // Load Color Scheme
+    this.colorSchemeService.load();
+  }
 }

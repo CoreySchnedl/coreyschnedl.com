@@ -1,3 +1,14 @@
-<div class="flex">
-  <app-title-bar></app-title-bar>
-</div>
+<mat-sidenav-container>
+
+  <mat-sidenav #sideNav mode="push" position="end">
+    <app-sidenav-list (toggleMenu)="sideNav.toggle()"></app-sidenav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <app-title-bar (toggleMenu)="sideNav.toggle()"></app-title-bar>
+    <app-profile></app-profile>
+    <app-active-certifications class="w-100 center"></app-active-certifications>
+    <app-skills-card></app-skills-card>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

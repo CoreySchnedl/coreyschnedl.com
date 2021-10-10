@@ -1,0 +1,7 @@
+@import '../../../corey-theme.scss';
+
+$primary: map-get($theme-light, primary);
+
+.coffee-button {
+    background: map-get($primary, 200);
+}

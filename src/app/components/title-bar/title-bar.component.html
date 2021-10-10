@@ -1,13 +1,34 @@
-<mat-toolbar color="primary">
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-    <mat-icon>menu</mat-icon>
-  </button>
-  <span>My App</span>
-  <span class="example-spacer"></span>
-  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-    <mat-icon>favorite</mat-icon>
-  </button>
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-    <mat-icon>share</mat-icon>
-  </button>
+<mat-toolbar color="primary" class="w-full h-s">
+  <div class="ml-auto inline-block mr-xxs f-r h-75">
+    <a href="https://www.linkedin.com/in/corey-schnedl/">
+      <img class="rounded h-full" src="assets/linked-in-64.png">
+    </a>
+  </div>
+  <div class="inline-block mr-xxs f-r h-75">
+    <a href="https://github.com/CoreySchnedl">
+      <img class="rounded h-full" src="assets/github-64.png">
+    </a>
+  </div>
+  <div class="inline-block mr-xxs f-r h-75">
+    <a href="https://twitter.com/CSchnedl">
+      <img class= "rounded h-full" src="assets/twitter-64.png">
+    </a>
+  </div>
+  <div class="inline-block mr-xxs f-r h-75">
+    <a href="https://buymeacoffee.com/coreyschnedl">
+      <button mat-raised-button class="coffee-button h-full">
+        <div class="inline-block">
+          <img class="w-auto h-xs mr-xxs mt-xxs" src="assets/BMCLogo.png">
+        </div>
+        <div class="inline-block">
+          <h3>Buy me a coffee</h3>
+        </div>
+      </button>
+    </a>
+  </div>
+  <div>
+    <button (click)="toggleMenu.emit()" mat-icon-button aria-label="menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
 </mat-toolbar>

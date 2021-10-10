@@ -1,8 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-title-bar',
   templateUrl: './title-bar.component.html',
   styleUrls: ['./title-bar.component.scss']
 })
-export class TitleBarComponent {}
+export class TitleBarComponent {
+  @Output()
+  toggleMenu = new EventEmitter<void>();
+}
