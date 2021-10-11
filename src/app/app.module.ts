@@ -8,20 +8,20 @@ import { SharedModule } from 'src/app/modules/shared/shared.module';
 import { TitleBarComponent } from './components/title-bar/title-bar.component';
 import { NavListComponent } from './components/nav-list/nav-list.component';
 import { SidenavListComponent } from './components/sidenav-list/sidenav-list.component';
-import { SkillsCardComponent } from './components/skills-card/skills-card.component';
-import { SkillComponent } from './components/skill/skill.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ActiveCertificationsComponent } from './components/active-certifications/active-certifications.component';
+import { CurrentSkillsetsComponent } from './components/current-skillsets/current-skillsets.component';
+import { SkillsetCardComponent } from './components/skillset-card/skillset-card.component';
 @NgModule({
   declarations: [
     AppComponent,
     TitleBarComponent,
     NavListComponent,
     SidenavListComponent,
-    SkillsCardComponent,
-    SkillComponent,
     ProfileComponent,
-    ActiveCertificationsComponent
+    ActiveCertificationsComponent,
+    CurrentSkillsetsComponent,
+    SkillsetCardComponent
   ],
   imports: [
     BrowserModule,

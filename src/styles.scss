@@ -51,6 +51,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     margin-right: 1.5rem !important;
 }
 
+.mx-s {
+    margin-right: 1.5rem !important;
+    margin-left: 1.5rem !important;
+}
+
 .center {
     justify-content: center;
     align-items: center;
@@ -75,16 +80,16 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     margin-top: 0.6rem !important;
 }
 
+.mb-xxs {
+    margin-bottom: 0.6rem !important;
+}
+
 .f-r {
     float: right !important;
 }
 
 .t-0 {
     top: 0 !important;
-}
-
-.t-a-center {
-    text-align: center;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -177,4 +182,16 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .rounded {
     border-radius: 50%;
+}
+
+//////////////////////////////////////////////////////////////////////
+// BEGIN POSITIONING
+//////////////////////////////////////////////////////////////////////
+
+.t-a-center {
+    text-align: center;
+}
+
+.t-a-left {
+    text-align: left;
 }

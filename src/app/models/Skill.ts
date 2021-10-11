@@ -1,5 +1,6 @@
 export default interface Skill {
   name: string;
-  imageURL: string;
-  experiences: string[];
+  score: number;
+  imgUrl: string;
+  additionalDetails: string;
 }
