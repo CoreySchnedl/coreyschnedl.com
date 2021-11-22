@@ -159,7 +159,7 @@ export class CurrentSkillsetsComponent {
           name: 'Agile',
           score: 80,
           additionalDetails:
-            '5+ years experience working within Agile teams. Will be certified in November.',
+            "5+ years experience working within Agile teams. Achieved PSM I Certification after taking Scrum.org's Professional Scrum Foundations course.",
           imgUrl: '../../../assets/skills/Scrum.png'
         }
       ]

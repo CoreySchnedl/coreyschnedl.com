@@ -1,24 +1,22 @@
-.row {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 100%;
+.certification-container {
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+  grid-gap: 20px;
+  align-items: auto;
+  margin: auto;
 }
 
-.column {
-    display: flex;
-    flex-direction: column;
-    flex-basis: 100%;
-    margin-left: 2rem;
-    margin-right: 2rem;
+@media screen and (max-width: 600px) {
+  .certification-container {
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  }
 }
 
-@media screen and (min-width: 800px) {
-    .column {
-      flex: 1
-    }
-  
-    .double-column {
-      flex: 2
-    }
+.certification-card {
+  position: relative;
+}
+
+.in-progress {
+  opacity: .5;
 }

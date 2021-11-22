@@ -1,19 +1,18 @@
-<mat-card>
-    <h1 class="column">{{skillSet.name}}</h1>
-    <ul>
-        <li *ngFor="let skill of skillSet.skills">
-            <div class="w-full mb-xxs">
-                <div class="row">
-                    <div class="column">
-                        <p class="m-auto">{{skill.name}}</p>
-                    </div>
-                    <div class="column">
-                        <img class="w-75" src="{{skill.imgUrl}}"/>
-                    </div>
-                </div>
-            </div>
-            <mat-progress-bar class="mb-xxs" mode="determinate" value="{{skill.score}}"></mat-progress-bar>
-            <p class="t-a-left">{{skill.additionalDetails}}</p>
-        </li>
-    </ul>
+<mat-card style="left: 0; right: 0;">
+  <h1>{{skillSet.name}}</h1>
+  <div *ngFor="let skill of skillSet.skills">
+    <div class="w-full mb-xxs">
+      <div>
+        <div>
+          <img class="m-s w-50" src="{{skill.imgUrl}}" />
+        </div>
+        <div>
+          <h2 class="m-auto">{{skill.name}}</h2>
+        </div>
+      </div>
+    </div>
+    <mat-progress-bar class="mb-xxs" mode="determinate" value="{{skill.score}}"></mat-progress-bar>
+    <p>{{skill.additionalDetails}}</p>
+    <br>
+  </div>
 </mat-card>
