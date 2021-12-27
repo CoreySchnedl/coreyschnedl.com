@@ -6,9 +6,7 @@
 
   <mat-sidenav-content>
     <app-title-bar (toggleMenu)="sideNav.toggle()"></app-title-bar>
-    <app-profile></app-profile>
-    <app-active-certifications class="w-100 center"></app-active-certifications>
-    <app-current-skillsets class="w-100 center"></app-current-skillsets>
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
 
 </mat-sidenav-container>
