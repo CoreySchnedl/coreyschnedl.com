@@ -12,6 +12,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { ActiveCertificationsComponent } from './components/active-certifications/active-certifications.component';
 import { CurrentSkillsetsComponent } from './components/current-skillsets/current-skillsets.component';
 import { SkillsetCardComponent } from './components/skillset-card/skillset-card.component';
+import { HomeComponent } from './components/home/home.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,8 @@ import { SkillsetCardComponent } from './components/skillset-card/skillset-card.
     ProfileComponent,
     ActiveCertificationsComponent,
     CurrentSkillsetsComponent,
-    SkillsetCardComponent
+    SkillsetCardComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
