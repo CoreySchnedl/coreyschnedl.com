@@ -29,7 +29,7 @@ export class CurrentSkillsetsComponent {
           name: 'VPC / Networking',
           score: 85,
           additionalDetails:
-            'I have experience setting up and troubleshooting complex networking setups between AWS and On Premises. I am actively studying for the AWS Advanced Networking Speciality Certification and plan to take the test before the end of the year.',
+            'I have experience setting up and troubleshooting complex networking setups between AWS and On Premises. I am certified in the AWS Advanced Networking Speciality subject area as of Dec 2021.',
           imgUrl: '../../../assets/skills/VPC.png'
         },
         {
