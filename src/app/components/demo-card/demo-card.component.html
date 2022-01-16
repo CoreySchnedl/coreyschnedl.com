@@ -14,7 +14,7 @@
   <div class="w-full">
     <div class="center">
       <a class="center" href="/demos/{{demo.route}}">
-        <button class="center" mat-raised-button>Go To Demo</button>
+        <button [disabled]="demo.comingSoon" class="center" mat-raised-button>{{demo.comingSoon ? 'Coming Soon!' : 'Go To Demo'}}</button>
       </a>
     </div>
   </div>
