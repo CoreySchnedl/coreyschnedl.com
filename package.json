@@ -10,8 +10,8 @@
     "lint": "tsc --noEmit && eslint . --ext js,ts,json --quiet",
     "lint-fix": "tsc --noEmit && eslint . --ext js,ts,json --quiet --fix",
     "postinstall": "ngcc",
-    "deploy": "aws s3 rm s3://coreyschnedl.com/ --recursive && aws s3 cp ./dist/corey-schnedl-website/ s3://coreyschnedl.com/ --recursive",
-    "cache-invalidate": "aws cloudfront create-invalidation --distribution-id E3VBTJN0AD7G01 --paths \"/*\""
+    "deploy": "aws s3 rm s3://coreyschnedl.com/ --recursive --profile corey-insight && aws s3 cp ./dist/corey-schnedl-website/ s3://coreyschnedl.com/ --recursive --profile corey-insight",
+    "cache-invalidate": "aws cloudfront create-invalidation --distribution-id E3VBTJN0AD7G01 --paths \"/*\" --profile corey-insight"
   },
   "private": true,
   "dependencies": {
