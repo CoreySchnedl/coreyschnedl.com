@@ -1,0 +1,24 @@
+<div class="w-full">
+    <mat-card class="center m-w-xxl mt-xxs m-auto">
+        <h1>{{ messageSent ? 'Message Sent!' : 'Contact Me' }}</h1>
+        <p>Use the form below to reach out to me if you would like. Whether it's about AWS, software development, or just want to set up a friendly chat, I'm open to discussions with anyone. I will respond to your inquiry as soon as I can.</p>
+        <form [formGroup]="contactMeForm" (ngSubmit)="onSubmit(contactMeForm.value)">
+            <mat-form-field class="w-75 mr-xs">
+                <mat-label>Your Name</mat-label>
+                <input matInput formControlName="name" required>
+            </mat-form-field>
+            <br>
+            <mat-form-field class="w-75 mr-xs">
+                <mat-label>Your Email</mat-label>
+                <input matInput formControlName="email" required>
+            </mat-form-field>
+            <br>
+            <mat-form-field hintLabel="Max 1000 characters" class="w-75 mr-xs">
+                <mat-label>Your message</mat-label>
+                <textarea matInput maxlength="1000" formControlName="message" required></textarea>
+            </mat-form-field>
+            <br>
+            <button type="submit" [disabled]="!contactMeForm.valid || messageSent" mat-raised-button>Send Message</button>
+        </form>
+    </mat-card>
+</div>

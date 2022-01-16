@@ -1,0 +1,21 @@
+<mat-card class="m-w-l" style="left: 0; right: 0;">
+  <h1 class="center">{{demo.title}}</h1>
+  <h2 class="center">{{demo.subtitle}}</h2>
+  <div class="w-full m-auto">
+    <div class="w-full m-auto">
+      <img class="m-auto w-50 block" src="{{demo.imgUrl}}" />
+    </div>
+    <p>{{demo.description}}</p>
+    <ul>
+      <li *ngFor="let item of demo.list">{{item}}</li>
+    </ul>
+    <br>
+  </div>
+  <div class="w-full">
+    <div class="center">
+      <a class="center" href="/demos/{{demo.route}}">
+        <button class="center" mat-raised-button>Go To Demo</button>
+      </a>
+    </div>
+  </div>
+</mat-card>

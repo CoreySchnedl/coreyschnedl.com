@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { ColorSchemeService } from 'src/app/services/ColorSchemeService.service';
 
 @Component({
@@ -18,7 +19,11 @@ export class NavListComponent {
     }
   ];
 
-  constructor(public colorSchemeService: ColorSchemeService) {}
+  constructor(
+    public colorSchemeService: ColorSchemeService,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars-experimental
+    public router: Router
+  ) {}
 
   setTheme(theme: string): void {
     this.colorSchemeService.update(theme);

@@ -7,6 +7,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+
 @NgModule({
   declarations: [],
   imports: [
@@ -17,7 +20,9 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     MatCardModule,
     MatSidenavModule,
     MatListModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   exports: [
     MatToolbarModule,
@@ -26,7 +31,9 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     MatCardModule,
     MatSidenavModule,
     MatListModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatFormFieldModule,
+    MatInputModule
   ]
 })
 export class SharedModule {}

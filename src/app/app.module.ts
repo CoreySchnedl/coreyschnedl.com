@@ -13,6 +13,14 @@ import { ActiveCertificationsComponent } from './components/active-certification
 import { CurrentSkillsetsComponent } from './components/current-skillsets/current-skillsets.component';
 import { SkillsetCardComponent } from './components/skillset-card/skillset-card.component';
 import { HomeComponent } from './components/home/home.component';
+import { DemosComponent } from './components/demos/demos.component';
+import { DemoCardComponent } from './components/demo-card/demo-card.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { DynamodbStreamDemoComponent } from './components/dynamodb-stream-demo/dynamodb-stream-demo.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ContactMeComponent } from './components/contact-me/contact-me.component';
+import { ContactService } from './services/contact.service';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,15 +31,23 @@ import { HomeComponent } from './components/home/home.component';
     ActiveCertificationsComponent,
     CurrentSkillsetsComponent,
     SkillsetCardComponent,
-    HomeComponent
+    HomeComponent,
+    DemosComponent,
+    DemoCardComponent,
+    NotFoundComponent,
+    DynamodbStreamDemoComponent,
+    ContactMeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    SharedModule
+    SharedModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ContactService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

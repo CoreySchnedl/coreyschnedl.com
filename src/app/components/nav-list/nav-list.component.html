@@ -1,4 +1,26 @@
 <mat-nav-list>
+    <h3 matSubheader>Navigation Links</h3>
+    <a href="/home">
+        <mat-list-item>
+            <mat-icon mat-list-icon>home</mat-icon>
+            <h3 matLine>Home</h3>
+            <mat-icon *ngIf="router.url === '/home'">check</mat-icon>
+        </mat-list-item>
+    </a>
+    <a href="/demos">
+        <mat-list-item>
+            <mat-icon mat-list-icon>collections</mat-icon>
+            <h3 matLine>Demos</h3>
+            <mat-icon *ngIf="router.url.includes('/demos')">check</mat-icon>
+        </mat-list-item>
+    </a>
+    <a href="/contact-me">
+        <mat-list-item>
+            <mat-icon mat-list-icon>email</mat-icon>
+            <h3 matLine>Contact</h3>
+            <mat-icon *ngIf="router.url === '/contact-me'">check</mat-icon>
+        </mat-list-item>
+    </a>
     <h3 matSubheader>Preferred Color Scheme</h3>
     <mat-list-item *ngFor="let theme of themes" (click)="setTheme(theme.name)">
         <mat-icon mat-list-icon>{{ theme.icon }}</mat-icon>

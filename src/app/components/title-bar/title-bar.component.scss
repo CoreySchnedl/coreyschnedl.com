@@ -11,3 +11,8 @@ $primary: map-get($theme-light, primary);
         display: none !important;
     }
 }
+
+h1 {
+    text-decoration: underline;
+    color: #fff;
+}

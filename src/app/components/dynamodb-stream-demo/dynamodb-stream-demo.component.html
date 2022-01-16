@@ -1,0 +1,16 @@
+<div class="w-full">
+    <mat-card class="center m-w-xl mt-xxs m-auto">
+        <h1>Enter your username</h1>
+        <mat-form-field class="mr-xs">
+            <mat-label>Username</mat-label>
+            <input matInput placeholder="CoreySchnedl" [formControl]="username" required>
+        </mat-form-field>
+        <br>
+        <mat-form-field class="mr-xs">
+            <mat-label>Connection Key</mat-label>
+            <input matInput placeholder="AskCorey" [formControl]="connectionKey" required>
+        </mat-form-field>
+        <br>
+        <button mat-raised-button>Connect</button>
+    </mat-card>
+</div>
