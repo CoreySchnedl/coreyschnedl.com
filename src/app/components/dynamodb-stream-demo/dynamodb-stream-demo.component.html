@@ -1,5 +1,5 @@
 <div class="w-full">
-    <mat-card class="center m-w-xl mt-xxs m-auto">
+    <mat-card *ngIf="!connected" class="center m-w-xl mt-xxs m-auto">
         <h1>Enter your username</h1>
         <mat-form-field class="mr-xs">
             <mat-label>Username</mat-label>
@@ -11,6 +11,14 @@
             <input matInput placeholder="AskCorey" [formControl]="connectionKey" required>
         </mat-form-field>
         <br>
-        <button mat-raised-button>Connect</button>
+        <button [disabled]="!username.valid || !connectionKey.valid" mat-raised-button (click)="connect()">Connect</button>
+    </mat-card>
+    <mat-card *ngIf="connected" class="center m-w-xl mt-xxs m-auto">
+        <mat-form-field class="mr-xs">
+            <mat-label>Message</mat-label>
+            <input matInput placeholder="Hello" [formControl]="message" required>
+        </mat-form-field>
+        <button [disabled]="!message.valid" mat-raised-button (click)="sendMessage()">Send Message</button>
+        <pre>{{scoreBoard | json}}</pre>
     </mat-card>
 </div>
