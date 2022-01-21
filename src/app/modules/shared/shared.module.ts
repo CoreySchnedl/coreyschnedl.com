@@ -9,6 +9,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [],
@@ -22,7 +23,8 @@ import { MatInputModule } from '@angular/material/input';
     MatListModule,
     MatProgressBarModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatTableModule,
   ],
   exports: [
     MatToolbarModule,
@@ -33,7 +35,8 @@ import { MatInputModule } from '@angular/material/input';
     MatListModule,
     MatProgressBarModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatTableModule
   ]
 })
 export class SharedModule {}

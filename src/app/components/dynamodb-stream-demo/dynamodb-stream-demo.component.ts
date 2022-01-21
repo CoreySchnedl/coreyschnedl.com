@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { webSocket } from 'rxjs/webSocket';
-// import { MatSnackBar } from '@angular/material/snack-bar';
-
 @Component({
   selector: 'app-dynamodb-stream-demo',
   templateUrl: './dynamodb-stream-demo.component.html',
@@ -14,7 +12,8 @@ export class DynamodbStreamDemoComponent {
   connectionKey = new FormControl('', [Validators.required]);
   message = new FormControl('', [Validators.required]);
   webSocketConnection: Subject<any>;
-  scoreBoard: any[];
+  dataSource: {username: string, score: number}[];
+  displayedColumns: string[] = ['username', 'score'];
 
   connected = false;
 
@@ -35,9 +34,16 @@ export class DynamodbStreamDemoComponent {
           console.log(msg);
           console.log(JSON.stringify(msg, undefined, 4));
           if ((msg as any).hashKey === 'SCOREBOARD') {
-            this.scoreBoard = Object.keys(msg)
-              .filter((key) => !['hashKey', 'sortKey'].includes(key))
-              .map((key) => ({ username: key, score: msg[key] }));
+            let scoreBoard = Object.keys(msg)
+              .filter((key) => {
+                console.log(key);
+                return key !== 'hashKey' && key !== 'sortKey';
+              })
+              .map((key) => ({ username: key, score: msg[key] }))
+              .sort((a, b) => b.score - a.score);
+            
+            console.log('scoreBoard', scoreBoard);
+            this.dataSource = scoreBoard
           }
         },
         (err: string) => console.log(err),
