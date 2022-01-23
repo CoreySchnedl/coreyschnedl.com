@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { webSocket } from 'rxjs/webSocket';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 @Component({
   selector: 'app-dynamodb-stream-demo',
   templateUrl: './dynamodb-stream-demo.component.html',
@@ -12,17 +14,16 @@ export class DynamodbStreamDemoComponent {
   connectionKey = new FormControl('', [Validators.required]);
   message = new FormControl('', [Validators.required]);
   webSocketConnection: Subject<any>;
-  dataSource: {username: string, score: number}[];
-  displayedColumns: string[] = ['username', 'score'];
+  scoreBoard: { username: string; score: number }[];
+  displayedColumns: string[] = ['position', 'username', 'score'];
 
+  disableConnectButton = false;
   connected = false;
 
-  constructor() {}
+  constructor(private _snackBar: MatSnackBar) {}
 
   connect(): void {
-    console.log('connecting!');
-
-    console.log(this.connectionKey.value);
+    this.disableConnectButton = true;
 
     try {
       this.webSocketConnection = webSocket(
@@ -31,23 +32,32 @@ export class DynamodbStreamDemoComponent {
 
       this.webSocketConnection.subscribe(
         (msg: any) => {
-          console.log(msg);
-          console.log(JSON.stringify(msg, undefined, 4));
           if ((msg as any).hashKey === 'SCOREBOARD') {
-            let scoreBoard = Object.keys(msg)
-              .filter((key) => {
-                console.log(key);
-                return key !== 'hashKey' && key !== 'sortKey';
-              })
+            if (this.connected && this.scoreBoard) {
+              this._snackBar.open('Scoreboard Updated!', 'Dismiss', {
+                duration: 2000
+              });
+            }
+            this.scoreBoard = Object.keys(msg)
+              .filter((key) => key !== 'hashKey' && key !== 'sortKey')
               .map((key) => ({ username: key, score: msg[key] }))
               .sort((a, b) => b.score - a.score);
-            
-            console.log('scoreBoard', scoreBoard);
-            this.dataSource = scoreBoard
           }
+          if (!this.connected) {
+            this._snackBar.open('Connected!', 'Dismiss', {
+              duration: 3000
+            });
+          }
+          this.connected = true;
         },
-        (err: string) => console.log(err),
-        () => console.log('complete')
+        (err: string) => {
+          this._snackBar.open('Error connecting to scoreboard. Please check connectionKey with Corey.', 'Dismiss', {
+            duration: 3000
+          });
+          console.log(err);
+          this.disableConnectButton = false;
+        },
+        () => console.log('websocket disconnected!')
       );
 
       this.webSocketConnection.next({
@@ -56,9 +66,6 @@ export class DynamodbStreamDemoComponent {
           username: this.username.value
         })
       });
-
-      this.connected = true;
-
       // this.snackBar.open('Connected!');
     } catch (e) {
       console.log(e);
@@ -69,8 +76,6 @@ export class DynamodbStreamDemoComponent {
   }
 
   sendMessage(): void {
-    console.log('Sending message!');
-
     this.webSocketConnection.next({
       action: 'message',
       message: JSON.stringify({
