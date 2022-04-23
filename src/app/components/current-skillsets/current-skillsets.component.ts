@@ -74,16 +74,16 @@ export class CurrentSkillsetsComponent {
         },
         {
           name: 'Jenkins',
-          score: 50,
+          score: 95,
           additionalDetails:
-            'I have limited experience with Jenkins to implement CICD.',
+            'I have a thorough understanding of Jenkins and have had hands on experience using Jenkins to set up CICD pipelines on multiple consulting projects.',
           imgUrl: '../../../assets/skills/Jenkins.png'
         },
         {
           name: 'Docker',
           score: 75,
           additionalDetails:
-            'I have hands on experience using Docker with Lambda',
+            'I have hands on experience using Docker with both ECS and Lambda (custom images)',
           imgUrl: '../../../assets/skills/Docker.png'
         },
         {
