@@ -1,0 +1,47 @@
+<div class="w-full">
+  <mat-card *ngIf="!connected" class="center m-w-xl mt-xxs m-auto">
+    <h1>Enter your username</h1>
+    <mat-form-field class="mr-xs">
+      <mat-label>Username</mat-label>
+      <input matInput placeholder="CoreySchnedl" [formControl]="username" required>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="mr-xs">
+      <mat-label>Connection Key</mat-label>
+      <input matInput placeholder="AskCorey" [formControl]="connectionKey" required>
+    </mat-form-field>
+    <br>
+    <button [disabled]="!username.valid || !connectionKey.valid || disableConnectButton" mat-raised-button (click)="connect()">Connect</button>
+  </mat-card>
+  <mat-card *ngIf="connected" class="center m-w-xxl mt-xxs m-auto">
+    <mat-form-field class="mr-xs">
+      <mat-label>Message</mat-label>
+      <input matInput placeholder="Hello" [formControl]="message" required>
+    </mat-form-field>
+    <button [disabled]="!message.valid" mat-raised-button (click)="sendMessage()">Send Message</button>
+  </mat-card>
+  <mat-card *ngIf="connected" class="center m-w-xxl mt-xxs m-auto">
+    <h1>Scoreboard</h1>
+    <table *ngIf="scoreBoard" mat-table [dataSource]="scoreBoard" class="mat-elevation-z8">
+        <ng-container matColumnDef="position">
+          <th mat-header-cell *matHeaderCellDef> No. </th>
+          <td mat-cell *matCellDef="let element; let i = index">{{i + 1}}</td>
+        </ng-container>
+      
+        <!-- Name Column -->
+        <ng-container matColumnDef="username">
+          <th mat-header-cell *matHeaderCellDef> Username </th>
+          <td mat-cell *matCellDef="let element"> {{element.username}} </td>
+        </ng-container>
+      
+        <!-- Weight Column -->
+        <ng-container matColumnDef="score">
+          <th mat-header-cell *matHeaderCellDef> Score </th>
+          <td mat-cell *matCellDef="let element"> {{element.score}} </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </mat-card>
+</div>

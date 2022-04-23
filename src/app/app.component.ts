@@ -10,7 +10,6 @@ export class AppComponent {
   title = 'corey-schnedl-website';
 
   constructor(private colorSchemeService: ColorSchemeService) {
-    // Load Color Scheme
     this.colorSchemeService.load();
   }
 }
